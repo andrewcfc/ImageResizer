@@ -69,10 +69,10 @@ public class MainActivity extends ActionBarActivity {
 
     //---------------------------threads and methods for them----------------------
 
-    public class DownloadingThread extends Thread{
+    public class DownloadingThread extends Thread {
 
         @Override
-        public void run(){
+        public void run() {
 
             while (true) {
                 String url;
@@ -108,7 +108,7 @@ public class MainActivity extends ActionBarActivity {
 
     // --------------------------methods-------------------------------
 
-    public void downloadUrl(String src){
+    public void downloadUrl(String src) {
 
         InputStream is = null;
         BufferedInputStream bis = null;
@@ -126,13 +126,13 @@ public class MainActivity extends ActionBarActivity {
 
         } catch (IOException e) {
 
-        }catch (Exception e) {
+        } catch (Exception e) {
 
         } finally {
             try {
-                if( is != null )
+                if (is != null)
                     is.close();
-                if( bis != null )
+                if (bis != null)
                     bis.close();
             } catch (IOException e) {
 
@@ -181,7 +181,7 @@ public class MainActivity extends ActionBarActivity {
         ArrayList<String> urls = new ArrayList<String>();
         JSONArray m_jArry = JSObj.getJSONArray("URLS");
 
-        for(int i=0; i<m_jArry.length(); i++){
+        for (int i = 0; i < m_jArry.length(); i++) {
             JSONObject o = (JSONObject) m_jArry.get(i);
             urls.add(o.get("url").toString());
         }
